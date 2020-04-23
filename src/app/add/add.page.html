@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Tarea</ion-title>
+    <ion-buttons slot="start" routerLink="../home">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Ingresar una nueva Tarea</ion-card-subtitle>
+      <ion-card-title>Completa</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+    <form>
+
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Titulo</ion-label>
+          <ion-input #tit type="text">
+          </ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label position="stacked">Descripción</ion-label>
+          <ion-input #desc type="text">
+          </ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <ion-row class="signin">
+        <ion-col>
+          <ion-button (click)="add(tit, desc)" color="primary" shape="full" expand="block">Agregar Tarea</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
