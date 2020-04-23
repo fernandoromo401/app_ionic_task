@@ -31,11 +31,20 @@
           </ion-input>
         </ion-item>
 
+        <ion-item>
+          <ion-label position="stacked">Fecha Inicial</ion-label>
+          <ion-datetime displayFormat="DD MMM, YYYY" #start value="" placeholder=""></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Fecha Final</ion-label>
+          <ion-datetime displayFormat="DD MMM, YYYY" #end value="" placeholder=""></ion-datetime>
+        </ion-item>
       </ion-list>
 
       <ion-row class="signin">
         <ion-col>
-          <ion-button (click)="add(tit, desc)" color="primary" shape="full" expand="block">Agregar Tarea</ion-button>
+          <ion-button (click)="add(tit, desc, start, end)" color="primary" shape="full" expand="block">Agregar Tarea</ion-button>
         </ion-col>
       </ion-row>
 

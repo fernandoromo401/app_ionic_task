@@ -16,11 +16,27 @@ export class AddPage implements OnInit {
   
   ngOnInit() {
   }
-  add(titulo, descripcion){
+  add(titulo, descripcion, start, end){
     
-    this.taskService.save(titulo.value,descripcion.value)
+    //Fecha Inicio
+    let yStart = start.value.substr(0,4)
+    let mStart = start.value.substr(5,2)
+    let dStart = start.value.substr(8,2)
+
+    let dateStart = `${dStart}/${mStart}/${yStart}`
+    //Fecha Fin
+    let yEnd = end.value.substr(0,4)
+    let mEnd = end.value.substr(5,2)
+    let dEnd = end.value.substr(8,2)
+
+    let dateEnd = `${dEnd}/${mEnd}/${yEnd}`
+
+
+    this.taskService.save(titulo.value,descripcion.value,dateStart,dateEnd)
     titulo.value.reset
     descripcion.value.reset
+    start.value.reset
+    end.value.reset
     this.router.navigate(['home'])      
   }
 }

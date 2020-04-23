@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'add',
     loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
   },
+  {
+    path: 'task/:id',
+    loadChildren: () => import('./task/task.module').then( m => m.TaskPageModule)
+  },
   
 ];
 

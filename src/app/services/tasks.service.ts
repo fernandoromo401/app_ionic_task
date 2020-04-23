@@ -15,16 +15,28 @@ export class TasksService {
   }
 
   findAll():Observable<any> {
-    console.log(this.tasks)
     return this.tasks
   }
 
-  save(title,description):Observable<any> {
+  findOne(name):Observable<any> {
+    let task;
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (name.id == this.tasks[i].title) {
+        task = this.tasks[i];
+      }
+
+    }
+    return task
+  }
+
+  save(title,description,start,end):Observable<any> {
     
     const task = {
       title: title,
       description: description,
-      state: false
+      state: false,
+      start: start,
+      end: end
     }
     
     this.tasks.push(task);

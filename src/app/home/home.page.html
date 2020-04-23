@@ -23,7 +23,7 @@
         <ion-item-option color="danger" (click)="delete(task.title)">
           <ion-icon name="trash"></ion-icon>
         </ion-item-option>
-        <ion-item-option color="success" (click)="delete(task.id)">
+        <ion-item-option color="success" routerLink="../task/{{task.title}}">
           <ion-icon name=""></ion-icon>
           <ion-icon name="enter-outline"></ion-icon>
           <ion-icon name=""></ion-icon>
